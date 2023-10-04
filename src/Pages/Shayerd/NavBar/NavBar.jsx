@@ -1,12 +1,21 @@
 import { Link, NavLink } from "react-router-dom"
-import  Linke from "../../../assets/index 1.png"
+import Linke from "../../../assets/index 1.png"
+import { useContext } from "react"
+import { AuthContext } from "../../../Providers/AuthProvider"
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+    .then()
+    .catch()
+  }
   const link = <>
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/about">About</NavLink></li>
     <li><NavLink to="/careear">Careear</NavLink></li>
     <li><NavLink to="/login">Login</NavLink></li>
+
   </>
   return (
     <div className="navbar bg-base-100">
@@ -26,14 +35,20 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end ">
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img  className="mr-3" src={Linke}/>
-        </div>
-      </label>
-        <Link>
-        <button className="bg-slate-700  py-2 px-10 text-white font-medium ">Login</button>
-        </Link>
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img className="mr-3" src={Linke} />
+          </div>
+        </label>
+        {
+          user ?
+            <button onClick={handleSignOut} className="bg-slate-700  py-2 px-10 text-white font-medium ">Sign Out</button>
+            :
+            <Link to="/login">
+              <button className="bg-slate-700  py-2 px-10 text-white font-medium ">Login</button>
+            </Link>
+        }
+
       </div>
     </div>
   )

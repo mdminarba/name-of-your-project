@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBzjjxkp3eynsbpQHSk7A7cMjZF9QJw4Js",
-  authDomain: "fir-pectricse.firebaseapp.com",
-  projectId: "fir-pectricse",
-  storageBucket: "fir-pectricse.appspot.com",
-  messagingSenderId: "643959978895",
-  appId: "1:643959978895:web:07a7fad459a2b925c9a9fa"
+  apiKey: "AIzaSyBwN79ZcTheJgQzmbX6yWdLQ7cHMA-yMM4",
+  authDomain: "name-of-your-project-47ea3.firebaseapp.com",
+  projectId: "name-of-your-project-47ea3",
+  storageBucket: "name-of-your-project-47ea3.appspot.com",
+  messagingSenderId: "287901150703",
+  appId: "1:287901150703:web:88ce2ad48df95a22615a1a"
 };
 
 // Initialize Firebase

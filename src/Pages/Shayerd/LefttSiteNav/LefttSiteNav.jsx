@@ -30,7 +30,7 @@ const LefttSiteNav = () => {
             className="block mt-5 text-[#9F9F9F] font-medium text-xl" 
             key={caterogys.id}
             to={`/caterogys/${caterogys.id}`}
-            >{caterogys.category_name} 
+            >{caterogys.name} 
           </Link>)
         }
 
