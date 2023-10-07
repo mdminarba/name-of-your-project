@@ -41,8 +41,10 @@ const NavBar = () => {
           </div>
         </label>
         {
-          user ?
-            <button onClick={handleSignOut} className="bg-slate-700  py-2 px-10 text-white font-medium ">Sign Out</button>
+          user ? <>
+          <span>{user.email}</span>
+          <button onClick={handleSignOut} className="bg-slate-700  py-2 px-10 text-white font-medium ">Sign Out</button>
+          </>
             :
             <Link to="/login">
               <button className="bg-slate-700  py-2 px-10 text-white font-medium ">Login</button>

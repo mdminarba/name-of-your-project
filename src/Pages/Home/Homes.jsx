@@ -4,9 +4,10 @@ import icon2 from '../../../src/assets/icon/Frame (2).svg'
 import icon3 from '../../../src/assets/icon/Fram (1).svg'
 import icon from '../../../src/assets/icon/Framee (1).svg'
 import moment from 'moment';
+import { Link } from 'react-router-dom'
 
 const Homes = ({ news }) => {
-  const { title, image_url, thumbnail_url, author ,details,total_view,rating,img} = news
+  const { title, image_url, thumbnail_url, author ,details,total_view,rating,_id} = news
   return (
     <div className='border my-5 p-5'>
       <div className=" flex justify-between bg-[#F3F3F3] p-2 rounded-md">
@@ -32,10 +33,11 @@ const Homes = ({ news }) => {
         <div className="">
           <img src={image_url} alt="" />
         </div>
-        <div className="">
-          <p className="mt-5">
-            {details}
-          </p>
+        <div className="mt-5 font-medium">
+          {details.length > 190 ? <p>{details.slice(0,190)} <Link to={`/news/${_id}`} className='text-red-400 font-bold'>Read More...</Link></p> 
+          : <p>{details}</p>
+          }
+          
           <div className="flex justify-between items-center ">
             <div className="flex gap-1 my-2">
               <img src={icon3} alt="" />
